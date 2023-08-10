@@ -5,5 +5,6 @@ while(!Serial){}//pocka nez je seriova komunikace pripravena mozna to ani nemusi
 }
 
 void loop(){
-
+Serial.println("message");
+delay(1000); 
 }
