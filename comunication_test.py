@@ -10,3 +10,12 @@ time.sleep(3)#cas nez se esp zapne a zacne fungovat
 ser.reset_input_buffer()# smaze se vse co mohlo prijit drive 
 print("serial ok") # pokud vse fungujevipise serial ok 
 ser.close # uzavreni seriove komunikace 
+try:
+    while True:
+        time.sleep(0.01)
+        if ser.in_waiting > 1:
+            line = ser.readline().decode('utf-8')
+            print(line)
+except KeyboardInterrupt:
+    print('close serial comunication')
+    ser.close # uzavreni seriove komunikace 
